@@ -1,0 +1,5 @@
+RubotoCurrencyConverter is just a ruboto script for currency conversion.
+At the moment it works only for euro -> croatian kunas conversion and viceversa.
+It has the current (2012-06-23) conversion value as a default but you can change currency values with the ad-hoc buttons.
+At the current state it's just a proof of concept but it works flawlessly.
+Heavily based on demo-ruboto.rb file.
