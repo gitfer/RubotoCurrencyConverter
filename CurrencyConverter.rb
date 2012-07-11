@@ -1,10 +1,8 @@
 #######################################################
 #
+# Heavily based on:
 # demo-ruboto.rb (by Scott Moyer)
 # 
-# A simple look at how to generate and 
-# use a RubotoActivity.
-#
 #######################################################
 
 require 'ruboto/activity'
@@ -112,19 +110,19 @@ $activity.start_ruboto_activity "$ruboto_demo" do
 		@baseText = "1 euro = #{@eurosToKunas} kune. 1 kuna = #{@kunasToEuros} euro\n"
 		@tv.setText @baseText
 	end
-  #
-  # Launches a separate activity for displaying
-  # a ListView.
-  #
-  def launch_list
-    self.start_ruboto_activity("$my_list") do
-      setTitle "Pick Something"
-      @list = ["Converti in euro", "Converti in kune"]
-      def on_create(bundle)
-        setContentView(list_view :list => @list, 
-          :on_item_click_listener => proc{|av, v, pos, item_id| toast(@list[pos]); finish})
-      end
-    end
-  end
+	#
+	# Launches a separate activity for displaying
+	# a ListView.
+	#
+	def launch_list
+		self.start_ruboto_activity("$my_list") do
+			setTitle "Pick Something"
+			@list = ["Converti in euro", "Converti in kune"]
+			def on_create(bundle)
+				setContentView(list_view :list => @list, 
+					       :on_item_click_listener => proc{|av, v, pos, item_id| toast(@list[pos]); finish})
+			end
+		end
+	end
 end
 
